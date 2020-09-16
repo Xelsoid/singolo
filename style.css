@@ -76,9 +76,39 @@ body {
   background-image: url(./img/Slide-1.png);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.arrow {
+.button_arrow_left,
+.button_arrow_right {
+  padding: 0px;
+  border: none;
+  width: 16px;
+  height: 27px;
   margin: 0px 3.9%;
+  background-color: #f06c64;
+  outline: none;
+}
+.button_arrow_left {
+  background-image: url(./img/arrow-left.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.button_arrow_right {
+  background-image: url(./img/arrow-right.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.button_arrow_left:active {
+  width: 23px;
+  height: 34px;
+  background-size: 85%;
+  box-shadow: 0 1px 3px #575555 inset; 
+}
+.button_arrow_right:active {
+  width: 23px;
+  height: 34px;
+  background-size: 85%;
+  box-shadow: 0 1px 3px #575555 inset; 
 }
 
 /******Services******/
@@ -335,25 +365,46 @@ body {
     transition: all 0.5s ease-in-out;
   }
   .button {
+    background-image: url(./img/Burger-menu-icon.png);
+    background-color: #2d303a;
+    padding: 0px;
+    border: 0px;
+    outline: none;
     width: 25px;
     height: 20px;
     order: 3;
     margin-left: 20px;
     margin-top: 26px;
-    position: fixed;
+    position: absolute;
+    z-index: 2;
+  }
+  .picture {
+    order: 2;
+    visibility: hidden;
+    z-index: 2;
+  }
+  .picture::after{
+    content: "";
+    background-image: url(./img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    position: absolute;
+    left: 71px;
+    top: 25px;
+    width: 100px;
+    height: 24px;
     z-index: 2;
   }
   .logo {
-    order: 2;
+    order: 3;
     margin-right: 36%;
-    margin-top: 24px;
-    z-index: 2;
+    margin-top: 20px;
   }
   .navigation {
     display: block;
     position: fixed;
     background-color: #2d303a;
-    box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 350px 0px 30px 30px rgba(0, 0, 0, 0.6);
     order: 1;
     margin: 0px;
     padding: 232px 2px 320px 71px;
@@ -362,6 +413,7 @@ body {
     visibility: hidden;
     list-style: none;
     text-align: center;
+    z-index: 1;
   }
   .navigation__item {
     display: block;
@@ -383,17 +435,35 @@ body {
   .header__navigation {
     position: relative;
   }
-  .button:hover {
+  .button:active {
     transform: rotate(90deg);
     transition: transform 0.3s ease-in-out;
   }
-  .button:hover + .navigation {
+  .button:active ~ .navigation  {
     visibility: visible;
+  }
+  .button:active + .picture {
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
   }
   .slider {
     background-size: 100%;
     height: 218px;
     transition: all 0.5s ease-in-out;
+  }
+
+  .button_arrow_left,
+  .button_arrow_right {
+    width: 14px;
+    height: 25px;
+  }
+  .button_arrow_left:active {
+    width: 18px;
+    height: 30px;
+  }
+  .button_arrow_right:active {
+    width: 18px;
+    height: 30px;
   }
   .services_list {
     margin: 25px 43px 0px 33px;
@@ -457,19 +527,43 @@ body {
     transition: all 0.5s ease-in-out;
   }
   .button {
+    background-image: url(./img/Burger-menu-icon.png);
+    background-color: #2d303a;
+    padding: 0px;
+    border: 0px;
+    outline: none;
     width: 25px;
     height: 20px;
     order: 3;
     margin-left: 20px;
     margin-top: 26px;
-    position: fixed;
+    position: absolute;
+    z-index: 2;
+  }
+  .picture {
+    order: 2;
+    visibility: hidden;
+    z-index: 2;
+  }
+  .picture::after{
+    content: "";
+    background-image: url(./img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    position: absolute;
+    left: 71px;
+    top: 25px;
+    width: 100px;
+    height: 24px;
     z-index: 2;
   }
   .logo {
-    order: 2;
+    order: 3;
     margin-right: 30%;
-    margin-top: 24px;
-    z-index: 2;
+    margin-top: 20px;
+  }
+  .picture {
+    order: 2;
   }
   .navigation {
     display: block;
@@ -484,6 +578,7 @@ body {
     visibility: hidden;
     list-style: none;
     text-align: center;
+    z-index: 1;
   }
   .navigation__item {
     display: block;
@@ -505,18 +600,35 @@ body {
   .header__navigation {
     position: relative;
   }
-  .button:hover {
+  .button:active {
     transform: rotate(90deg);
     transition: transform 0.3s ease-in-out;
   }
-  .button:hover + .navigation {
+  .button:active ~ .navigation {
     visibility: visible;
+  }
+  .button:active + .picture {
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
   }
   .slider {
     background-size: 100%;
     height: 188px;
     background-repeat: no-repeat;
     transition: all 0.5s ease-in-out;
+  }
+  .button_arrow_left,
+  .button_arrow_right {
+    width: 12px;
+    height: 24px;
+  }
+  .button_arrow_left:active {
+    width: 14px;
+    height: 26px;
+  }
+  .button_arrow_right:active {
+    width: 18px;
+    height: 30px;
   }
   .services_list {
     margin: 25px 30px 0px 33px;
@@ -527,7 +639,7 @@ body {
     gap: 15px;
     transition: all 0.8s ease-in-out;
   }
-  .description{
+  .description {
     width: 100%;
     line-height: 20px;
   }
@@ -547,18 +659,21 @@ body {
     border: none;
   }
   .filter_link {
-  text-decoration: none;
-  font-family: Lato;
-  font-size: 12px;
-  line-height: 12px;
-  text-align: center;
-  color: #767e9e;
-  margin: 4px 1px 6px 1px;
-  padding: 1px 2px;
-  border: 1px solid #767e9e;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
+    text-decoration: none;
+    font-family: Lato;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: #767e9e;
+    margin: 4px 1px 6px 1px;
+    padding: 1px 2px;
+    border: 1px solid #767e9e;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .filter_text {
+    margin-right: 2px;
+  }
   .grid_filter {
     display: grid;
     grid-template-rows: repeat(4, 100px);
