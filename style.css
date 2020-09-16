@@ -444,7 +444,6 @@ body {
   }
   .button:active + .picture {
     visibility: visible;
-    transition: all 0.5s ease-in-out;
   }
   .slider {
     background-size: 100%;
@@ -609,7 +608,6 @@ body {
   }
   .button:active + .picture {
     visibility: visible;
-    transition: all 0.5s ease-in-out;
   }
   .slider {
     background-size: 100%;
