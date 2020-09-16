@@ -435,16 +435,6 @@ body {
   .header__navigation {
     position: relative;
   }
-  .button:active {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease-in-out;
-  }
-  .button:active ~ .navigation  {
-    visibility: visible;
-  }
-  .button:active + .picture {
-    visibility: visible;
-  }
   .slider {
     background-size: 100%;
     height: 218px;
@@ -518,7 +508,20 @@ body {
     margin-bottom: 22px;
     padding: 0px;
   }
+   /*******JS*********/
+  .active {
+    visibility: visible;
+   
+  }
+  .active_button {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  .active_picture {
+    visibility: visible;
+  }
 }
+
 @media (min-width: 320px) and (max-width: 375px) {
   .wrapper {
     border-bottom: none;
@@ -598,16 +601,6 @@ body {
   }
   .header__navigation {
     position: relative;
-  }
-  .button:active {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease-in-out;
-  }
-  .button:active ~ .navigation {
-    visibility: visible;
-  }
-  .button:active + .picture {
-    visibility: visible;
   }
   .slider {
     background-size: 100%;
@@ -701,5 +694,17 @@ body {
     margin-right: auto;
     margin-bottom: 22px;
     padding: 0px;
+  }
+  /*******JS*********/
+  .active {
+    visibility: visible;
+   
+  }
+  .active_button {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  .active_picture {
+    visibility: visible;
   }
 }
